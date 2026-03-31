@@ -6,6 +6,7 @@ import io.wispforest.accessories.api.AccessoriesCapability;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.SimpleMenuProvider;
 import net.neoforged.bus.api.IEventBus;
@@ -42,7 +43,9 @@ public class CraftingAccessoryMod {
         if (player.containerMenu instanceof PersistentCraftingMenu) return;
 
         player.openMenu(new SimpleMenuProvider(
-                (containerId, inv, p) -> new PersistentCraftingMenu(containerId, inv),
+                (containerId, inv, p) -> new PersistentCraftingMenu(
+                        containerId, inv,
+                        ContainerLevelAccess.create(p.level(), p.blockPosition())),
                 Component.translatable("container.crafting")));
     }
 

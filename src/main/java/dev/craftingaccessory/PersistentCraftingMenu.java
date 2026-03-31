@@ -12,8 +12,9 @@ import net.minecraft.world.inventory.CraftingMenu;
  */
 public class PersistentCraftingMenu extends CraftingMenu {
 
-    public PersistentCraftingMenu(int containerId, Inventory playerInventory) {
-        super(containerId, playerInventory, ContainerLevelAccess.NULL);
+    public PersistentCraftingMenu(int containerId, Inventory playerInventory,
+            ContainerLevelAccess access) {
+        super(containerId, playerInventory, access);
     }
 
     @Override
