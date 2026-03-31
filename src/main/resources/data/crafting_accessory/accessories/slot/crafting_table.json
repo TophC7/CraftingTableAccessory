@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "amount": 1,
+    "operation": "set",
+    "order": 1000,
+    "icon": "crafting_accessory:gui/slot/crafting_table",
+    "validators": [
+        "accessories:tag"
+    ]
+}
